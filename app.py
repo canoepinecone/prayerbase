@@ -31,5 +31,6 @@ def newprayer():
         return redirect(url_for('index'))
 
 @app.route('/showprayer', methods=['GET'])
+def showprayer():
     # TODO params in url
     return render_template('show.html')
