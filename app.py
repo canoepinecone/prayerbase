@@ -64,6 +64,9 @@ def showprayer():
 @app.route('/deleteprayer', methods=['GET'])
 def deleteprayer():
     # TODO params in url
+    prayer = Prayer.query.get(request.args.get('id'))
+    db.session.delete(prayer)
+    db.session.commit()
     return redirect(url_for('index'))
 
 app.run()
