@@ -35,4 +35,8 @@ def showprayer():
     # TODO params in url
     return render_template('show.html')
 
+@app.route('/deleteprayer' methods=['GET'])
+    # TODO params in url
+    return redirect(url_for('index'))
+    
 app.run()
