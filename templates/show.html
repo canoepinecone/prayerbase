@@ -5,10 +5,10 @@
         <title>PrayerBase: PrayerTitle</title>
     </head>
     <body>
-        <h1>PrayerBase</h1>
-        <h2>PrayerTitle</h2>
-        <img src="imgurl.jpg" />
-        <p>Prayer Description</p>
-        <a href="/deleteprayer">Delete prayer</a>
+        <h1><a href="/">PrayerBase</a></h1>
+        <h2>{{ prayer.title }}</h2>
+        <img src="{{ prayer.image_url }}" />
+        <p>{{ prayer.description }}</p>
+        <a href="/deleteprayer?id={{ prayer.id }}">Delete prayer</a>
     </body>
 </html>

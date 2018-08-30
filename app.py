@@ -58,8 +58,8 @@ def newprayer():
 
 @app.route('/showprayer', methods=['GET'])
 def showprayer():
-    # TODO params in url
-    return render_template('show.html')
+    prayer = Prayer.query.get(request.args.get('id'))
+    return render_template('show.html', prayer=prayer)
 
 @app.route('/deleteprayer', methods=['GET'])
 def deleteprayer():
