@@ -34,3 +34,5 @@ def newprayer():
 def showprayer():
     # TODO params in url
     return render_template('show.html')
+
+app.run()
