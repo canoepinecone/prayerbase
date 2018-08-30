@@ -12,14 +12,17 @@
             <a href="/login">Login</a>
             <a href="/register">Register</a>
         </div>
+        <a href="/newprayer">New Prayer</a>
         <div class="prayerlist">
             <div class="prayer">
-                <img src="exampleprayer.jpg">
-                <h2>Prayer Name</h2>
-                <p>
-                    Some prayer text is here. Please pray for us!
-                </p>
-                <a href="/deleteprayer">Delete</a>
+                {% for prayer in prayers %}
+                    <img src="{{ prayer.image_url }}">
+                    <h2>{{ prayer.title }}</h2>
+                    <p>
+                        {{ prayer.description }}
+                    </p>
+                    <a href="/deleteprayer">Delete</a>
+                {% endfor %}
             </div>
         </div>
     </body>
