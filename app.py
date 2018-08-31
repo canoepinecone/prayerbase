@@ -12,6 +12,7 @@ class Prayer(db.Model):
     title = db.Column(db.String(80), unique=True)
     description = db.Column(db.Text)
     image_url = db.Column(db.String(500), unique=True)
+    
 
     def __repr__(self):
         return '<Prayer %r>' % self.title
@@ -74,6 +75,11 @@ def deleteprayer():
     db.session.delete(prayer)
     db.session.commit()
     return redirect(url_for('index'))
+
+@app.route('/users', methods=['GET'])
+def users():
+    users = User.query.all()
+    return render_template('users.html', users=users)
 
 if __name__ == '__main__':
     app.run()
