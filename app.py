@@ -24,6 +24,8 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
+import utils
+
 @app.route('/', methods=['GET'])
 def index():
     prayers = Prayer.query.all()
@@ -42,6 +44,8 @@ def register():
     if request.method == 'GET':
         return render_template('register.html')
     elif request.method == 'POST':
+        if not utils.validate_user_new:
+            return redirect(url_for('index'))
         user = User(username = request.form['username'], password_hash = request.form['password'])
         db.session.add(user)
         db.session.commit()
