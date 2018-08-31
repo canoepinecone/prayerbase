@@ -1,0 +1,5 @@
+* Auth
+* Upvoting/downvoting
+* Categories
+* Styling
+* Logo
